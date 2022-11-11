@@ -24,9 +24,7 @@ public class User extends AbstractEntity {
         this.username= username;
         this.pwHash = encoder.encode(password);
     }
-    //User objects should also be responsible for determining
-    // if a given password is a match for the hash stored by the object
-    // this is done with the encoder.matches
+
     public boolean isMatchingPassword(String password){
         return encoder.matches(password, pwHash);
     }
